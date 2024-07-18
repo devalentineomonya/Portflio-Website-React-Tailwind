@@ -1,0 +1,21 @@
+.hero-container{
+    @apply container flex justify-center items-center min-h-[calc(100vh-5rem)] mt-6git 
+
+}
+.hero-left-container{
+    @apply  flex-1 h-full text-white font-semibold flex justify-center items-start flex-col
+}
+.hero-left-container h4{
+    @apply  text-6xl
+}
+.hero-left-container h6{
+    @apply text-3xl mt-2
+    
+}
+.hero-left-container button {
+    @apply text-xl mt-3 pr-4 py-2 bg-black rounded-full flex justify-center items-center flex-nowrap
+    
+}
+.hero-right-container{
+    @apply bg-yellow-400 flex-1 h-full
+}

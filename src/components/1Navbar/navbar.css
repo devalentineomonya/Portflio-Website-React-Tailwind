@@ -1,5 +1,5 @@
 .navbar-header{
-    @apply  text-white   flex justify-center items-center
+    @apply  text-white   flex justify-center items-center w-full
 }
 .navbar{
     @apply bg-black min-h-12 px-5 rounded-2xl fixed top-2 hover:top-5 transition-all ease-in-out duration-300   delay-300 flex justify-center items-center

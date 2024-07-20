@@ -13,7 +13,7 @@
     
 }
 .hero-left-container button {
-    @apply text-xl mt-3 pr-4 py-2 bg-black rounded-full flex justify-center items-center flex-nowrap
+    @apply text-xl mt-3 pr-4 py-2 bg-black transition-all ease-in-out duration-300 hover:bg-gray-300 hover:text-slate-950 rounded-full flex justify-center items-center flex-nowrap
     
 }
 .hero-right-container{

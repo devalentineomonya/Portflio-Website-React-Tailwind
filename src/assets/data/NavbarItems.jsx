@@ -8,31 +8,31 @@ import { RiMessage2Line } from "react-icons/ri";
 const navbarItems = [
   {
     name: "profile",
-    icon:<GoPerson size={20} className="text-gray-400"/>
+    icon:<GoPerson size={20} className="text-gray-300"/>
   },
   {
     name: "Education",
-    icon:<PiBuildingsLight size={20} className="text-gray-400"/>
+    icon:<PiBuildingsLight size={20} className="text-gray-300"/>
   },
   {
     name: "Experience",
-    icon:<BiBriefcaseAlt2 size={20} className="text-gray-400"/>
+    icon:<BiBriefcaseAlt2 size={20} className="text-gray-300"/>
   },
   {
     name: "My Value",
-    icon:<BiHeart size={20} className="text-gray-400"/>
+    icon:<BiHeart size={20} className="text-gray-300"/>
   },
   {
     name: "Testimonials",
- icon:<PiUserList size={20} className="text-gray-400"/>
+ icon:<PiUserList size={20} className="text-gray-300"/>
   },
   {
     name: "Projects",
-    icon:<BiBook size={20} className="text-gray-400"/>
+    icon:<BiBook size={20} className="text-gray-300"/>
   },
   {
     name: "Contact",
-    icon:<RiMessage2Line size={20} className="text-gray-400"/>
+    icon:<RiMessage2Line size={20} className="text-gray-300"/>
   },
 ];
 

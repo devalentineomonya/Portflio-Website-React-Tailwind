@@ -4,11 +4,11 @@ import HeroLeft from './HeroLeft'
 import HeroRight from './HeroRight'
 const HeroMain = () => {
   return (
-    <div className='hero-container'>
+    <section className='hero-container'>
         <HeroLeft/>
         <HeroRight/>
       
-    </div>
+    </section>
   )
 }
 

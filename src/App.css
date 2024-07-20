@@ -8,8 +8,8 @@ html, body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, #0f0f0f 100px), repeating-linear-gradient(#000000, #000000);
-  background-color: #0f0f0f;
+  background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, #0b0b0e 150px), repeating-linear-gradient(#101111, #101111);
+  background-color: #0b0b0e;
   background-size: cover;
   min-height: 100vh;
   display: flex;

@@ -1,14 +1,13 @@
 import React from "react";
-
-import "pure-react-carousel/dist/react-carousel.es.css";
 import "./App.css";
-import NavbarMain from "./components/1Navbar/NavbarMain";
-import Main from "./pages/Main";
+import NavbarMain from "./components/common/1Navbar/NavbarMain"
+
+import Home from "./pages/Home";
 const App = () => {
   return (
     <>
       <NavbarMain />
-      <Main />
+      <Home />
     </>
   );
 };

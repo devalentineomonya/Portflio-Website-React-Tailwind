@@ -1,0 +1,6 @@
+.experience-section{
+    @apply container pb-32
+}
+.section-title{
+    @apply text-white text-left text-2xl font-semibold mb-6
+}

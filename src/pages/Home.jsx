@@ -1,13 +1,17 @@
-import React from 'react'
-import HeroMain from '../components/Home/1Hero/HeroMain'
-import Experience from '../components/Home/2Experience/Experience'
+import React from "react";
+import HeroMain from "../components/Home/1Hero/HeroMain";
+import Experience from "../components/Home/2Experience/Experience";
+import SoftSkills from "../components/Home/3SoftSkills/SoftSkills";
+import Values from "../components/Home/4Values/Values";
 const Home = () => {
   return (
     <>
-      <HeroMain/>
-      <Experience/>
+      <HeroMain />
+      <Experience />
+      <SoftSkills />
+      <Values />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

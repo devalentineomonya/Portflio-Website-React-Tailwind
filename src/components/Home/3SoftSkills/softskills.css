@@ -1,5 +1,5 @@
-.soft-skill-container{
-    @apply flex gap-x-3 justify-start items-center container pb-28
+.soft-skills-content{
+@apply flex gap-x-3 justify-start items-center container pb-28
 }
 .soft-skill-card {
     @apply flex py-2 px-2 rounded-2xl bg-black justify-start items-center min-w-fit

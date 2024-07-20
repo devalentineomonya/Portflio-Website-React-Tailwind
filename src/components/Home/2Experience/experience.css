@@ -1,5 +1,5 @@
 .experience-section{
-    @apply container pb-32
+    @apply container pb-20
 }
 .section-title{
     @apply text-white text-left text-2xl font-semibold mb-6

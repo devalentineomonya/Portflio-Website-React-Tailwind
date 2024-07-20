@@ -11,7 +11,7 @@
 }
 
 .navbar:hover .navitem-name {
-  @apply opacity-100 w-full inline
+  @apply w-full inline -right-28  opacity-100 static
 }
 
 .navbar-items-container {
@@ -23,5 +23,5 @@
 }
 
 .navitem-name {
-  @apply opacity-0 hidden w-[0%] whitespace-nowrap
+  @apply opacity-0  w-[0%] absolute right-40 whitespace-nowrap transition-all ease-in-out duration-500 delay-300
 }

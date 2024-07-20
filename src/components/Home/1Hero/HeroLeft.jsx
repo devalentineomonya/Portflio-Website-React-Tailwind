@@ -9,7 +9,7 @@ const HeroLeft = () => {
     <div className='hero-left-container'>
     <h4>Hi! I'm Valentine.</h4>
     <h6>A Junior Software Engineer</h6>
-    <button onClick={handleRedirect}> <BsDot size={40} className="text-green-400"/> Available for new Ideas</button>
+    <button onClick={handleRedirect}> <BsDot size={40} className="hero-indicator"/> Available for new Ideas</button>
     </div>
   )
 }

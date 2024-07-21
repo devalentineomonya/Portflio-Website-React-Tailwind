@@ -1,0 +1,6 @@
+.testimonial-section{
+    @apply container
+}
+.cards-container{
+    @apply flex justify-center items-center bg-red-600
+}

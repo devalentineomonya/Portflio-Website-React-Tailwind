@@ -1,6 +1,7 @@
 import React from "react";
 import navbarItems from "../../../assets/data/NavbarItems";
 import "./navbar.css";
+import { BiMoon } from "react-icons/bi";
 
 const NavbarMain = () => {
   return (
@@ -13,6 +14,12 @@ const NavbarMain = () => {
               <span className="navitem-name">{item.name}</span>
             </li>
           ))}
+          <li className="navbar-item">
+            <span className="navitem-icon">
+              <BiMoon size={20} />
+            </span>
+            <span className="navitem-name">Dark</span>
+          </li>
         </ul>
       </nav>
     </header>

@@ -3,11 +3,11 @@
 }
 
 .navbar-header:hover .navbar {
-  @apply w-[830px] top-5
+  @apply w-[920px] top-5
 }
 
 .navbar {
-  @apply w-80 bg-black min-h-12 px-5 rounded-3xl fixed top-2 flex justify-center items-center;
+  @apply w-[350px] bg-black min-h-12 px-5 rounded-3xl fixed top-2 flex justify-center items-center z-40;
 }
 
 .navbar:hover .navitem-name {

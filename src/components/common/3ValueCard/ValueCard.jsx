@@ -2,12 +2,13 @@ import React from "react";
 import "./valuecard.css";
 import { RiStockLine } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
+import { CgUserList } from "react-icons/cg";
 const ValueCard = () => {
   return (
     <div className="value-card-container">
       <div className="value-card-description">
         <div className="value-card-description-icon">
-          <GrGraphQl />
+        <CgUserList size={20}/>
         </div>
         <div className="value-card-description-title">Continuos Improvement</div>
         <div className="value-card-description-content">

@@ -1,0 +1,7 @@
+.projects-wrapper{
+    @apply flex justify-center items-center w-full
+    
+}
+.projects-container{
+    @apply flex flex-nowrap justify-start w-full h-[400px]
+}

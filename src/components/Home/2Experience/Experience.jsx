@@ -18,7 +18,7 @@ const Experience = () => {
         naturalSlideWidth={100}
         naturalSlideHeight={125}
         totalSlides={8}
-        visibleSlides={5}
+        visibleSlides={4}
         className="carousel-provider"
       >
         <Slider>

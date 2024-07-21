@@ -13,7 +13,8 @@
 .hero-left-container h6 {
     @apply text-3xl mt-2
 }
-.hero-indicator{
+
+.hero-indicator {
     @apply text-green-400 animate-ping
 }
 
@@ -22,8 +23,55 @@
 }
 
 .hero-right-container {
-    @apply bg-yellow-400 flex-1 w-full
+    @apply flex-1 w-full flex justify-center items-center
 }
-.view-more{
+
+.view-more {
     @apply absolute bg-red-400 bottom-10 h-20 w-20 rounded-full flex justify-center items-center
+}
+
+
+.social-link-menu {
+    @apply flex relative justify-center items-center w-[280px] h-[280px];
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.social-links-toggle {
+    @apply relative h-16 w-16 rounded-full bg-white flex justify-center items-center font-[2em] text-[#333] cursor-pointer;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+
+.social-link-menu.active .social-links-toggle {
+    transform: rotate(360deg);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 0 0 2px #333, 0 0 0 8px #fff;
+
+}
+
+.social-link-menu li {
+    @apply absolute left-0 duration-500;
+    transform: rotate(calc(360deg/8 * var(--i)));
+    transform-origin: 140px;
+    list-style: none;
+    transition-duration: calc(0.05s * var(--i));
+    scale: 0;
+}
+
+.social-link-menu.active li {
+    scale: 1;
+}
+
+.social-link-menu li a {
+    @apply relative w-16 h-16 bg-white flex justify-center items-center rounded-full duration-500;
+    color: var(--clr);
+    transform: rotate(calc(360deg/-8 * var(--i)));
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+
+
+}
+
+.social-link-menu li:hover a {
+    /* transform: scale(1.05); */
+    box-shadow: 0 0 0 2px var(--clr), 0 0 0 8px #fff;
+
 }

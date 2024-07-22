@@ -5,6 +5,7 @@ import SoftSkills from "../components/Home/3SoftSkills/SoftSkills";
 import Values from "../components/Home/4Values/Values";
 import Testimonials from "../components/Home/5Testimonials/Testimonials";
 import Projects from "../components/Home/6Projects/Projects";
+import Contact from "../components/Home/7Contact/Contact";
 const Home = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const Home = () => {
       <Values />
       {/* <Testimonials/> */}
       <Projects/>
+      <Contact/>
       
       
     </>

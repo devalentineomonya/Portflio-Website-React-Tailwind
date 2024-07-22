@@ -1,0 +1,14 @@
+.contact-section {
+    @apply container
+}
+.contact-social-container{
+    display: grid;
+    grid-template-columns:2fr 1fr 1fr 1fr  ;
+    
+    
+    
+}
+.contact-social-container.second{
+    grid-template-columns:1fr 1fr 1fr 2fr   ;
+    margin-top: 10px;
+}

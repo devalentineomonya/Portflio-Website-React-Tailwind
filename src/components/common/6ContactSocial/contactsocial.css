@@ -1,0 +1,3 @@
+.contact-social-card{
+    @apply  bg-black h-28 shadow-md rounded-lg mr-3 border border-gray-800 ;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import TestimonialCard from "../../common/4TestimonialCard/TestimonialCard";
 import "./testimonials.css";
-import { ButtonBack, CarouselProvider, Slide, Slider } from "pure-react-carousel";
+import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from "pure-react-carousel";
 const Testimonials = () => {
   return (
     <section className="testimonial-section">

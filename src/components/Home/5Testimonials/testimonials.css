@@ -1,6 +1,6 @@
 .testimonial-section{
-    @apply container
+    @apply container pb-24
 }
 .cards-container{
-    @apply flex justify-center items-center bg-red-600
+    @apply flex justify-center items-center
 }

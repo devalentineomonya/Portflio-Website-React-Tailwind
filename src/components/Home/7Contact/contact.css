@@ -28,7 +28,7 @@
     @apply text-white mb-3 font-semibold
 }
 
-.form-item span{
+.form-item label span{
     @apply text-red-600 font-bold text-2xl ml-2;
     line-height: 0;
 }
@@ -47,4 +47,7 @@
 }
 .contact-form button>span{
     @apply h-6 w-6 rounded-full border-white border-2 border-t border-t-transparent animate-spin
+}
+.validation-error{
+    @apply text-white mt-3
 }

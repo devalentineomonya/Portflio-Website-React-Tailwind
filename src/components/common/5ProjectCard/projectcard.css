@@ -1,5 +1,5 @@
 .project-card{
-@apply w-20 rounded-[0.75rem] bg-cover bg-no-repeat bg-center bg-blend-darken overflow-hidden cursor-pointer mx-3 flex items-end ;
+@apply w-20 rounded-[0.75rem] bg-cover bg-no-repeat bg-center bg-blend-darken overflow-hidden cursor-pointer mx-3 flex items-end border border-gray-800 ;
 transition: 0.6s cubic-bezier(.28, -0.03, 0,.99);
 box-shadow: 0 10px 30px -5px rgba(0,0,0,0.8);
 background:var(--img)

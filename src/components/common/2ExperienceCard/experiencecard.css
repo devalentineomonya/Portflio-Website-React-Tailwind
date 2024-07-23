@@ -1,5 +1,5 @@
 .experience-card{
-    @apply w-[calc(100%-20px)] h-[18rem] rounded-2xl bg-black text-white
+    @apply w-[calc(100%-20px)] h-[18rem] rounded-2xl bg-black text-white border border-gray-800 
 }
 .experience-card-container{
     @apply flex justify-center items-center p-3 w-full h-full

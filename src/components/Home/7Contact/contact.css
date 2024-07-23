@@ -1,14 +1,50 @@
 .contact-section {
     @apply container
 }
-.contact-social-container{
+
+.contact-social-container {
     display: grid;
-    grid-template-columns:2fr 1fr 1fr 1fr  ;
-    
-    
-    
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 }
-.contact-social-container.second{
-    grid-template-columns:1fr 1fr 1fr 2fr   ;
+
+.contact-social-container.second {
+    grid-template-columns: 1fr 1fr 1fr 2fr;
     margin-top: 10px;
+}
+
+.contact-form {
+    @apply mt-5 w-full
+}
+
+.contact-input-grid {
+    @apply grid grid-cols-3 mb-3 gap-3
+}
+
+.form-item {
+    @apply flex justify-start flex-col items-start w-full
+}
+
+.form-item label {
+    @apply text-white mb-3 font-semibold
+}
+
+.form-item span{
+    @apply text-red-600 font-bold text-2xl ml-2;
+    line-height: 0;
+}
+.contact-form input {
+    @apply h-12 rounded-md border border-gray-800 outline-none text-white bg-black text-xl px-3 w-full pt-1
+}
+
+.contact-form textarea {
+    @apply w-full h-56 rounded-md border border-gray-800 outline-none text-white bg-black text-xl px-3 pt-2
+}
+.contact-form input::placeholder, textarea::placeholder{
+    @apply text-gray-500
+}
+.contact-form button{
+    @apply py-2 px-8 bg-black rounded-md border border-gray-800 mt-3 text-white flex justify-center items-center
+}
+.contact-form button>span{
+    @apply h-6 w-6 rounded-full border-white border-2 border-t border-t-transparent animate-spin
 }

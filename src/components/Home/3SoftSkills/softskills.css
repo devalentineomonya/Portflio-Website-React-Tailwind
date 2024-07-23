@@ -2,7 +2,7 @@
 @apply flex gap-x-3 justify-start items-center container pb-24
 }
 .soft-skill-card {
-    @apply flex py-2 px-2 rounded-2xl bg-black justify-start items-center min-w-fit
+    @apply flex py-2 px-2 rounded-2xl bg-black justify-start items-center min-w-fit border border-gray-800 
 }
 .soft-skill-icon{
     @apply h-10 w-10 bg-gray-900 rounded-md 

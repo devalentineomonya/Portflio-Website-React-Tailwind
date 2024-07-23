@@ -1,5 +1,6 @@
 import React from "react";
 import ContactSocial from "../../common/6ContactSocial/ContactSocial";
+import ContactForm from "./ContactForm";
 import "./contact.css"
 const Contact = () => {
   return (
@@ -17,6 +18,7 @@ const Contact = () => {
         <ContactSocial />
         <ContactSocial />
       </div>
+      <ContactForm/>
     </section>
   );
 };

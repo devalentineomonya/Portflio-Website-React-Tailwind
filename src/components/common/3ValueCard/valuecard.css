@@ -1,5 +1,5 @@
 .value-card-container{
-    @apply w-full aspect-video bg-black rounded-xl flex justify-center items-center p-3 text-gray-100
+    @apply w-full aspect-video bg-black rounded-xl flex justify-center items-center p-3 text-gray-100 border border-gray-800 
 }
 .value-card-description{
     @apply flex flex-col items-start justify-start h-full flex-auto

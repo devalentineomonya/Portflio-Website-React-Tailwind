@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from '@/components/ui/sidebar'
+import { SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarMenuBadge } from '@/components/ui/sidebar'
 import { navbarItems } from './navbarItems'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -17,7 +17,7 @@ const SidebarLeftNavigation = () => {
         <SidebarGroupContent>
           <SidebarMenu>
             {navbarItem.items?.map((item) => (
-              <SidebarMenuItem key={item.name}>
+              <SidebarMenuItem className='flex items-center' key={item.name}>
                 <SidebarMenuButton
                   className={cn("rounded-md gap-3 flex items-center p-2.5 py-1.5 transition-all hover:border min-h-10 text-gray-400 hover:text-white", {
                     " bg-sidebar-accent": pathName === item.link,
@@ -30,6 +30,7 @@ const SidebarLeftNavigation = () => {
                     <span>{item.name}</span>
                   </Link>
                 </SidebarMenuButton>
+                <SidebarMenuBadge className='text-center border border-gray-600 hover:border-white text-gray-400 hover:text-white mt-1'>23</SidebarMenuBadge>
               </SidebarMenuItem>
             ))}
           </SidebarMenu>

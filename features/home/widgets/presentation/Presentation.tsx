@@ -7,7 +7,7 @@ const Presentation = () => {
   return (
     <section className="w-full ">
       <Tabs defaultValue="work">
-        <TabsList className="border-b bg-transparent w-full flex justify-center  gap-x-4 rounded-none">
+        <TabsList className="border-b bg-transparent w-full flex justify-center  gap-x-4 rounded-none sticky top-14 backdrop-blur z-10">
           <TabsTrigger value="work">Work</TabsTrigger>
           <TabsTrigger value="resume">Resume</TabsTrigger>
           <TabsTrigger value="blogs">Blogs</TabsTrigger>

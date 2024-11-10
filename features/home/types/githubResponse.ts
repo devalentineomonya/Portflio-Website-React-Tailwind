@@ -10,7 +10,7 @@ export interface userProfile {
 export interface githubRepo {
   id: number;
   name: string;
-  full_name: string;
+  svn_url: string;
   language: string;
   description: string;
   stargazers_count: number;

@@ -14,7 +14,7 @@ const caveat = Caveat({
 });
 const Header = () => {
   return (
-    <header className="border-b py-2 bg-slate-900/60 px-4 flex justify-between items-center sticky top-0">
+    <header className="border-b py-2 bg-slate-900/60 px-4 flex justify-between items-center sticky top-0 z-10 backdrop-blur">
       <div className="flex items-center gap-x-6">
         <div className="relative max-w-5">
           <Avatar className="h-10 w-10 shrink-0 overflow-hidden">

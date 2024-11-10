@@ -9,7 +9,7 @@ import { LuLink } from "react-icons/lu";
 
 export const navbarItems = [
   {
-    name: "",
+    name:null,
     items: [
       { name: "Explorer", link: "/", icon: MdOutlineExplore },
       { name: "Experience", link: "/experience", icon: PiBriefcase },

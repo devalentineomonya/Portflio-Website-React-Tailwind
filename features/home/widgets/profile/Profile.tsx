@@ -5,7 +5,7 @@ import { MdVerified } from "react-icons/md";
 import { FiLink } from "react-icons/fi";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { techStacks } from "./techStackIconsMap";
+import { techStacks } from "../../../../lib/techStackIconsMap";
 import Image from "next/image";
 import {
   Tooltip,

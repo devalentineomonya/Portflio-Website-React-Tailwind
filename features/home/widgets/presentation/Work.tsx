@@ -36,18 +36,18 @@ const Work = () => {
     setLoading(false);
   }, []);
 
-  // useEffect(() => {
-  //   const fetchFromGithub = async () => {
-  //     try {
-  //       const userContribution = await fetchPinnedReposAndContributions() || [];
-  //       setContributions(userContribution);
-  //     } catch (error) {
-  //       console.error("Failed to fetch profile:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchFromGithub = async () => {
+      try {
+        const userContribution = await fetchPinnedReposAndContributions() || [];
+        setContributions(userContribution);
+      } catch (error) {
+        console.error("Failed to fetch profile:", error);
+      }
+    };
 
-  //   fetchFromGithub();
-  // }, []);
+    fetchFromGithub();
+  }, []);
 
   const displayedRepos = showAll ? contributions : contributions?.slice(0, 4);
 

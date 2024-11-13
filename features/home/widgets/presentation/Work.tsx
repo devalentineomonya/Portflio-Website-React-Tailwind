@@ -14,23 +14,21 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { blogSites } from "@/lib/blogSitesMap";
 import { PiCubeLight } from "react-icons/pi";
-import { getPinnedRepos_v2 } from '@kentaylorappdev/get-pinned-repos'
-getPinnedRepos_v2('devalentineomonya')
-  .then(console.log)
+import { GithubRepo } from "../../types/githubResponse";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const Work = () => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
-  const [contributions, setContributions] = useState<any[]>([
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ]);
+  const [fetching, setFetching] = useState(true);
+  const [contributions, setContributions] = useState<any[]>([]);
+  const [pinnedRepos, setPinnedRepos] = useState<GithubRepo[]>([]);
   const [showAll, setShowAll] = useState(false);
   const url = `https://jandee.vercel.app/devalentineomonya?theme=${theme}`;
 
@@ -39,20 +37,25 @@ const Work = () => {
   }, []);
 
   useEffect(() => {
+    setFetching(true);
     const fetchFromGithub = async () => {
       try {
-        // const userContribution = await fetchPinnedReposAndContributions() || [];
-        // setContributions(userContribution);
+        const { pinnedRepos, contributions } =
+          (await fetchPinnedReposAndContributions()) || [];
+        setPinnedRepos(pinnedRepos);
+        setContributions(contributions);
       } catch (error) {
         console.error("Failed to fetch profile:", error);
+      } finally {
+        setFetching(false);
       }
     };
 
     fetchFromGithub();
   }, []);
 
-  const displayedRepos = showAll ? contributions : contributions?.slice(0, 4);
-
+  const displayedRepos = showAll ? pinnedRepos : pinnedRepos?.slice(0, 4);
+  console.log({ pinnedRepos, contributions });
   return (
     <TabsContent value="work">
       <div className="flex items-center gap-x-3 my-8 text-xl font-medium">
@@ -78,20 +81,41 @@ const Work = () => {
       </div>
 
       <div className="py-4 flex items-center justify-between">
-        <h3 className="text-sm text-white">
-          Total{" "}
-          <span className="text-base font-semibold">
-            {contributions.length}
-          </span>{" "}
+        <h3 className="text-sm text-foreground">
+          Total
+          <span className="text-base font-semibold mx-1">
+            {pinnedRepos.length}
+          </span>
           repositories
         </h3>
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Theme" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="light">Light</SelectItem>
+            <SelectItem value="dark">Dark</SelectItem>
+            <SelectItem value="system">System</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {displayedRepos.map((_, index) => (
-            <GitRepoCard key={index} /*repo={repo}*/ />
-          ))}
+          {fetching ? (
+            <>
+              <Skeleton className="inset-0 w-full h-28" />
+              <Skeleton className="inset-0 w-full h-28" />
+              <Skeleton className="inset-0 w-full h-28" />
+              <Skeleton className="inset-0 w-full h-28" />
+            </>
+          ) : displayedRepos.length > 0 ? (
+            displayedRepos.map((repo, index) => (
+              <GitRepoCard key={index} repo={repo} />
+            ))
+          ) : (
+            <div className="text-center col-span-2">No data available</div>
+          )}
         </div>
 
         {contributions.length > 4 && (

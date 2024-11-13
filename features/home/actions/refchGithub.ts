@@ -1,78 +1,102 @@
 "use server";
+import {
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+  gql,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 const token = process.env.GITHUB_ACCESS_TOKEN;
 const username = process.env.GITHUB_USER_NAME;
-import { githubRepo, userProfile } from "../types/githubResponse";
-import { graphql } from "@octokit/graphql";
+import { GithubRepo } from "../types/githubResponse";
 
-export async function fetchRepo() {
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${username}/repos`
-    );
-    const data: githubRepo = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
+const REPOSITORY_FRAGMENT = gql`
+  fragment RepositoryFields on Repository {
+    nameWithOwner
+    collaborators {
+      nodes {
+        avatarUrl
+        name
+        url
+        login
+      }
+    }
+    id
+    url
+    languages(first: 4) {
+      nodes {
+        name
+      }
+    }
+    description
+    forkCount
+    homepageUrl
+    stargazers {
+      totalCount
+    }
   }
-}
+`;
 
-export async function fetchProfile() {
-  try {
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const data: userProfile = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-export async function fetchPinnedReposAndContributions() {
-  try {
-    const graphqlWithAuth = graphql.defaults({
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-    });
-
-    const response: any = await graphqlWithAuth(`
-      {
-        user(login: "${username}") {
-          pinnedItems(first: 6, types: REPOSITORY) {
-            nodes {
-              ... on Repository {
-                id
-                name
-                description
-                url
-                stargazerCount
-                languages(first: 3) {
-                  nodes {
-                    name
-                  }
-                }
-              }
-            }
+const GET_PINNED_REPOS_AND_CONTRIBUTIONS = gql`
+  query GetPinnedReposAndContributions($username: String!) {
+    user(login: $username) {
+      pinnedItems(first: 6, types: [REPOSITORY]) {
+        totalCount
+        edges {
+          node {
+            ...RepositoryFields
           }
-          contributionsCollection {
-            totalCommitContributions
-            totalPullRequestContributions
-            contributionCalendar {
-              totalContributions
-              weeks {
-                contributionDays {
-                  contributionCount
-                  date
-                  color
-                }
-              }
+        }
+      }
+      contributionsCollection {
+        contributionCalendar {
+          totalContributions
+          weeks {
+            contributionDays {
+              color
+              contributionCount
+              date
             }
           }
         }
       }
-    `);
+    }
+  }
+  ${REPOSITORY_FRAGMENT}
+`;
 
-    return response.user;
+export async function fetchPinnedReposAndContributions() {
+  try {
+    const httpLink = createHttpLink({
+      uri: "https://api.github.com/graphql",
+    });
+
+    const authLink = setContext((_, { headers }) => {
+      return {
+        headers: {
+          ...headers,
+          authorization: `Bearer ${token}`,
+        },
+      };
+    });
+
+    const client = new ApolloClient({
+      link: authLink.concat(httpLink),
+      cache: new InMemoryCache(),
+    });
+
+    const { data } = await client.query({
+      query: GET_PINNED_REPOS_AND_CONTRIBUTIONS,
+      variables: { username },
+    });
+
+    const { user } = data;
+    console.log(data);
+    const pinnedRepos = user.pinnedItems.edges.map(
+      (edge: { node: GithubRepo[] }) => edge.node
+    );
+    const contributions = user.contributionsCollection.contributionCalendar;
+    return { pinnedRepos, contributions };
   } catch (error) {
     console.error("Error fetching GitHub data:", error);
     throw error;

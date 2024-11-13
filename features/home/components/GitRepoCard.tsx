@@ -10,17 +10,15 @@ import { techStacks } from "@/lib/techStackIconsMap";
 import Image from "next/image";
 import { CiStar } from "react-icons/ci";
 import { GoRepoForked } from "react-icons/go";
-const GitRepoCard = () => {
-  const description =
-    "This is a description of the project Elit est ex id nulla cillum velit nulla sit excepteur incididunt consequat eu laboris do. Ullamco id quis nostrud non laboris mollit duis. Nisi irure officia proident aliqua officia.";
+import { GithubRepo } from "../types/githubResponse";
+const GitRepoCard = ({ repo }: { repo: GithubRepo }) => {
+  const description = repo.description;
   return (
-    <Link href="/">
-      <Card
-        className="px-3 py-2 flex flex-col justify-between flex-1 group border border-border hover:shadow-lg rounded-xl overflow-hidden outline-none focus-within:border-green-light transition-all"
-      >
+    <Link href={repo.url} target="_blank" >
+      <Card className="px-3 py-2 flex flex-col justify-between flex-1 group border border-border hover:shadow-lg rounded-xl overflow-hidden outline-none focus-within:border-green-light transition-all">
         <CardHeader className="p-0">
           <h1 className="text-sm text-foreground font-medium truncate ">
-            Git Repo Card
+            {repo.nameWithOwner}
           </h1>
         </CardHeader>
         <CardContent className="p-0">
@@ -33,25 +31,41 @@ const GitRepoCard = () => {
           </div>
         </CardContent>
         <CardFooter className="p-0 text-[10px]">
-          <div className="flex items-center gap-x-3">
-            <Image
-              src={techStacks[0].icon}
-              alt={techStacks[0].name}
-              width={20}
-              height={20}
-            />
-            <p className=" text-gray-500 dark:text-gray-400 truncate">
-              {techStacks[0].name}
-            </p>
+          <div className="flex items-center gap-x-1">
+            {repo.languages.nodes.map((language) => {
+              const techStack = techStacks.find(
+                (stack) => stack.name === language.name
+              );
+              return techStack ? (
+                <>
+                  <Image
+                    key={language.name}
+                    src={techStack.icon}
+                    alt={techStack.name}
+                    width={12}
+                    height={12}
+                  />
+                  <p className=" text-gray-500 dark:text-gray-400 truncate">
+                    {techStack.name}
+                  </p>
+                </>
+              ) : null;
+            })}
           </div>
           <div className="flex items-center gap-x-0.5">
             <CiStar size={12} className="text-foreground ml-2" />
-            <span className=" text-gray-500 dark:text-gray-400 "> 100</span>
+            <span className=" text-gray-500 dark:text-gray-400 ">
+              {repo.stargazers.totalCount}
+            </span>
           </div>
-          <div className="flex items-center gap-x-0.5">
-            <GoRepoForked size={14} className="text-foreground ml-2" />
-            <span className=" text-gray-500 dark:text-gray-400 "> 100</span>
-          </div>
+          {repo.forkCount && (
+            <div className="flex items-center gap-x-0.5">
+              <GoRepoForked size={14} className="text-foreground ml-2" />
+              <span className=" text-gray-500 dark:text-gray-400 ">
+                {repo.forkCount}
+              </span>
+            </div>
+          )}
         </CardFooter>
       </Card>
     </Link>

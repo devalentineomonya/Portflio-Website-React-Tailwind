@@ -1,4 +1,4 @@
-export interface userProfile {
+export interface UserProfile {
   name: string;
   blog: string;
   bio: string;
@@ -7,12 +7,18 @@ export interface userProfile {
   public_repos: number;
 }
 
-export interface githubRepo {
+export interface GithubRepo {
   id: number;
-  name: string;
-  svn_url: string;
-  language: string;
+  nameWithOwner: string;
+  url: string;
+  languages: {
+    nodes: {
+      name: string;
+    }[];
+  };
   description: string;
-  stargazers_count: number;
-  forks: number;
+  stargazers: {
+    totalCount: number;
+  };
+  forkCount: number;
 }

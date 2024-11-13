@@ -7,8 +7,8 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const BlogProjectCard = () => {
   return (
     <Card
-      className="bg-transparent overflow-hidden outline-none focus-within:border-gray-400 transition-all
-    flex flex-col justify-between flex-1 group border border-gray-700 hover:shadow-md hover:shadow-gray-700  rounded-lg "
+      className="bg-transparent shadow-none overflow-hidden outline-none focus-within:border-gray-400 transition-all
+    flex flex-col justify-between flex-1 group border border-gray-200 dark:border-gray-700 hover:shadow-md hover:shadow-gray-200 dark:hover:shadow-gray-700  rounded-lg "
     >
       <CardContent className="p-0">
         <Link href="/">
@@ -25,7 +25,7 @@ const BlogProjectCard = () => {
       <CardFooter className="w-full p-4 flex-1 flex flex-col justify-between h-full">
         <Link href="/">
           <div className="flex items-start justify-start">
-            <h1 className="text-sm font-semibold text-white">
+            <h1 className="text-sm font-semibold text-slate-800 dark:text-white">
               Is Create React App Really Dead? What Are Other Options?
             </h1>
           </div>

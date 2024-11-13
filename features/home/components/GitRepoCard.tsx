@@ -16,25 +16,23 @@ const GitRepoCard = () => {
   return (
     <Link href="/">
       <Card
-        className="p-4 bg-transparent flex flex-col justify-between flex-1
-       group border border-gray-700 hover:shadow-md hover:shadow-gray-700 rounded-md overflow-hidden
-        outline-none focus-within:border-gray-300 transition-all"
+        className="px-3 py-2 flex flex-col justify-between flex-1 group border border-border hover:shadow-lg rounded-xl overflow-hidden outline-none focus-within:border-green-light transition-all"
       >
         <CardHeader className="p-0">
-          <h1 className="text-sm text-white font-medium truncate ">
+          <h1 className="text-sm text-foreground font-medium truncate ">
             Git Repo Card
           </h1>
         </CardHeader>
         <CardContent className="p-0">
           <div className="flex gap-2 items-center my-2">
-            <span className="text-xs text-gray-300">
+            <span className="text-xs text-gray-800 dark:text-gray-300">
               {description?.length > 95
                 ? `${description.slice(0, 95)}...`
                 : description}
             </span>
           </div>
         </CardContent>
-        <CardFooter className="p-0">
+        <CardFooter className="p-0 text-[10px]">
           <div className="flex items-center gap-x-3">
             <Image
               src={techStacks[0].icon}
@@ -42,17 +40,17 @@ const GitRepoCard = () => {
               width={20}
               height={20}
             />
-            <p className="text-xs text-gray-400 truncate">
+            <p className=" text-gray-500 dark:text-gray-400 truncate">
               {techStacks[0].name}
             </p>
           </div>
           <div className="flex items-center gap-x-0.5">
-            <CiStar className="text-white ml-2" />
-            <span className="text-xs text-gray-400"> 100</span>
+            <CiStar size={12} className="text-foreground ml-2" />
+            <span className=" text-gray-500 dark:text-gray-400 "> 100</span>
           </div>
           <div className="flex items-center gap-x-0.5">
-            <GoRepoForked size={12} className="text-white ml-2" />
-            <span className="text-xs text-gray-400"> 100</span>
+            <GoRepoForked size={14} className="text-foreground ml-2" />
+            <span className=" text-gray-500 dark:text-gray-400 "> 100</span>
           </div>
         </CardFooter>
       </Card>

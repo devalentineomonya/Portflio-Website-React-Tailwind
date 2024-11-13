@@ -34,8 +34,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="fixed top-0 z-[-2] h-full min-h-screen w-screen bg-[#020617] bg-[radial-gradient(#ffffff33_1px,#020617_1px)] bg-[size:40px_40px] 3xl:bg-[size:20px_20px]"></div>
-          <div className="gradient fixed z-[-1] opacity-80 md:opacity-70 top-0 left-0 h-full w-full"></div>
+          {/* <div className="fixed top-0 z-[-2] h-full min-h-screen w-screen bg-[#020617] bg-[radial-gradient(#ffffff33_1px,#020617_1px)] bg-[size:40px_40px] 3xl:bg-[size:20px_20px]"></div>
+          <div className="gradient fixed z-[-1] opacity-80 md:opacity-70 top-0 left-0 h-full w-full"></div> */}
           <main className="w-full flex justify-center items-center">
             <SidebarProvider className="flex justify-center">
               <div className="flex justify-center w-full max-w-[1200px] h-full min-h-screen">

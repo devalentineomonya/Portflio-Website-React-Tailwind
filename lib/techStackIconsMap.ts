@@ -4,7 +4,7 @@ import nextjsIcon from "@/public/nextjs.svg";
 import reactNativeIcon from "@/public/react_native.svg";
 import redux from "@/public/redux.svg";
 import mongodb from "@/public/mongodb.svg";
-import prizma from "@/public/prizma.svg";
+import prisma from "@/public/prisma.svg";
 import drizzle from "@/public/drizzle.svg";
 import tailwindcss from "@/public/tailwindcss.svg";
 import javascript from "@/public/javascript.svg";
@@ -20,7 +20,7 @@ export const techStacks = [
   { name: "PostgreSQL", icon: postgresql },
   { name: "MongoDB", icon: mongodb },
   { name: "Drizzle", icon: drizzle },
-  { name: "Prisma", icon: prizma },
+  { name: "Prisma", icon: prisma },
   { name: "NextJs", icon: nextjsIcon },
   { name: "NodeJs", icon: nodejs },
   { name: "Redux", icon: redux },

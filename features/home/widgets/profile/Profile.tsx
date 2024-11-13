@@ -16,7 +16,7 @@ import {
 
 const Profile = () => {
   return (
-    <Card className="py-10 rounded-none border-none bg-transparent">
+    <Card className="py-10 rounded-none border-none bg-transparent  shadow-none">
       <CardContent className="flex flex-col items-center justify-center">
         <TooltipProvider>
           <Tooltip>
@@ -33,9 +33,9 @@ const Profile = () => {
         </TooltipProvider>
         <div className="flex items-center gap-x-1">
           <h1 className="font-semibold text-xl mt-4 mb-1">Valentine Omonya</h1>
-          <MdVerified className="text-white" />
+          <MdVerified className="text-foreground" />
         </div>
-        <p className="text-gray-200 text-center mb-1">Software Engineer</p>
+        <p className="text-gray-600 dark:text-gray-200 text-center mb-1">Software Engineer</p>
         <div className="flex items-center gap-x-4 text-xs my-2">
           <p>Junior Engineer</p>
           <TooltipProvider>
@@ -58,7 +58,7 @@ const Profile = () => {
         <div className="flex  justify-center flex-wrap gap-3 mt-5">
           {techStacks.map((techStack) => (
             <Badge
-              className="min-w-32 flex-shrink-0 flex items-center gap-x-3  py-1 min-h-8 max-h-8 hover:bg-slate-900/80 cursor-pointer"
+              className="min-w-32 flex-shrink-0 flex items-center gap-x-3  py-1 min-h-8 max-h-8 hover:bg-background/80 cursor-pointer"
               variant="outline"
               key={techStack.name}
             >

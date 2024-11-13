@@ -1,5 +1,5 @@
 import { MdOutlineExplore } from "react-icons/md";
-import { PiBriefcase } from "react-icons/pi";
+import { PiBriefcase, PiRobot } from "react-icons/pi";
 import { FiBook } from "react-icons/fi";
 import { LuFolderGit2 } from "react-icons/lu";
 import { PiGraduationCapLight } from "react-icons/pi";
@@ -25,6 +25,7 @@ export const navbarItems = [
       { name: "Blogs", link: "/blogs", icon: FiBook },
       { name: "Achievements", link: "/achievements", icon: TbLayoutGridAdd },
       { name: "Stack", link: "/stack", icon: GoStack },
+      { name: "Chat", link: "/chat", icon: PiRobot },
     ],
   },
   {

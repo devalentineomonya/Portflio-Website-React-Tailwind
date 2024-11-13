@@ -14,7 +14,9 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { blogSites } from "@/lib/blogSitesMap";
 import { PiCubeLight } from "react-icons/pi";
-
+import { getPinnedRepos_v2 } from '@kentaylorappdev/get-pinned-repos'
+getPinnedRepos_v2('devalentineomonya')
+  .then(console.log)
 const Work = () => {
   const { theme } = useTheme();
   const [loading, setLoading] = useState(true);
@@ -39,8 +41,8 @@ const Work = () => {
   useEffect(() => {
     const fetchFromGithub = async () => {
       try {
-        const userContribution = await fetchPinnedReposAndContributions() || [];
-        setContributions(userContribution);
+        // const userContribution = await fetchPinnedReposAndContributions() || [];
+        // setContributions(userContribution);
       } catch (error) {
         console.error("Failed to fetch profile:", error);
       }
@@ -97,7 +99,7 @@ const Work = () => {
             <Button
               variant="outline"
               onClick={() => setShowAll(!showAll)}
-              className="gap-2 bg-transparent py-0 h-7 border-gray-400 rounded-full hover:bg-gray-800/70 text-xs"
+              className="gap-2 bg-transparent py-0 h-7 border-gray-400 rounded-full text-xs"
             >
               {showAll ? (
                 <>
@@ -117,7 +119,7 @@ const Work = () => {
           {blogSites.map((blogSite) => (
             <Badge
               key={blogSite.name}
-              className="bg-transparent text-lg text-white border hover:bg-transparent min-w-28 flex-shrink-0 flex items-center gap-x-3  py-1 min-h-8 max-h-8 cursor-pointer"
+              className="bg-transparent shadow-transparent text-sm text-gray-500  dark:text-white border hover:bg-transparent min-w-28 flex-shrink-0 flex items-center gap-x-3  py-1 min-h-8 max-h-8 cursor-pointer"
             >
               <Image
                 width={24}
@@ -140,7 +142,7 @@ const Work = () => {
       </section>
       <section className="mt-24">
         <div className="flex items-center gap-x-1 my-3 mb-6 text-xl font-medium">
-          <Badge className="bg-transparent text-lg text-white border hover:bg-transparent min-w-28 flex-shrink-0 flex items-center gap-x-3  py-1 min-h-8 max-h-8 cursor-pointer">
+          <Badge className="bg-transparent shadow-transparent text-lg text-foreground border hover:bg-transparent min-w-28 flex-shrink-0 flex items-center gap-x-3  py-1 min-h-8 max-h-8 cursor-pointer">
             <PiCubeLight size={24} />
             <span>Projects</span>
           </Badge>

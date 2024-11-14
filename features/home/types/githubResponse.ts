@@ -22,3 +22,19 @@ export interface GithubRepo {
   };
   forkCount: number;
 }
+
+interface ContributionDay {
+  color: string;
+  contributionCount: number;
+  date: string;
+  __typename: "ContributionCalendarDay";
+}
+
+interface ContributionWeek {
+  contributionDays: ContributionDay[];
+}
+
+export interface ContributionData {
+  totalContributions: number;
+  weeks: ContributionWeek[];
+}

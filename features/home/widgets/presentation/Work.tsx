@@ -95,8 +95,11 @@ const Work = () => {
           Github
         </Link>
       </div>
-
-      <ContributionHeatmap data={contributions} />
+      {isLoading ? (
+        <Skeleton className="inset-0 w-full h-28" />
+      ) : (
+        <ContributionHeatmap data={contributions} />
+      )}
 
       <div className="py-4 flex items-center justify-between">
         <h3 className="text-sm text-foreground">

@@ -11,7 +11,11 @@ import javascript from "@/public/javascript.svg";
 import nodejs from "@/public/nodejs.svg";
 import git from "@/public/git.svg";
 import postgresql from "@/public/postgresql.svg";
-
+import php from "@/public/php.svg"
+import laravel from "@/public/laravel.svg"
+import python from "@/public/python.svg"
+import hono from "@/public/hono.svg"
+import express from "@/public/expressjs.svg"
 export const techStacks = [
   { name: "React Native", icon: reactNativeIcon },
   { name: "TailwindCSS", icon: tailwindcss },
@@ -26,4 +30,9 @@ export const techStacks = [
   { name: "Redux", icon: redux },
   { name: "React", icon: reactIcon },
   { name: "Git", icon: git },
+  {name:"PHP", icon:php},
+  {name:"Laravel", icon:laravel},
+  {name:"Hono", icon:hono},
+  {name:"Express", icon:express},
+  {name:"Python", icon:python}
 ];

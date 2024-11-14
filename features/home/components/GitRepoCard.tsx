@@ -15,7 +15,7 @@ const GitRepoCard = ({ repo }: { repo: GithubRepo }) => {
   const description = repo.description;
   return (
     <Link href={repo.url} target="_blank" >
-      <Card className="px-3 py-2 flex flex-col justify-between flex-1 group border border-border hover:shadow-lg rounded-xl overflow-hidden outline-none focus-within:border-green-light transition-all">
+      <Card className="px-3 py-2 flex flex-col justify-between flex-1 group border border-border hover:shadow-lg rounded-xl overflow-hidden outline-none focus-within:border-green-light transition-all min-h-24">
         <CardHeader className="p-0">
           <h1 className="text-sm text-foreground font-medium truncate ">
             {repo.nameWithOwner}
@@ -34,7 +34,7 @@ const GitRepoCard = ({ repo }: { repo: GithubRepo }) => {
           <div className="flex items-center gap-x-1">
             {repo.languages.nodes.map((language) => {
               const techStack = techStacks.find(
-                (stack) => stack.name === language.name
+                (stack) => stack.name.toLowerCase() === language.name.toLowerCase()
               );
               return techStack ? (
                 <>

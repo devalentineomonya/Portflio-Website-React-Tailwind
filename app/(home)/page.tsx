@@ -1,9 +1,9 @@
-import Presentation from "@/features/home/widgets/presentation/Presentation";
-import Profile from "@/features/home/widgets/profile/Profile";
+import Presentation from "@/screens/home/widgets/presentation/Presentation";
+import Profile from "@/screens/home/widgets/profile/Profile";
 
 export default function Home() {
   return (
-    <main className="px-4  bg-background">
+    <main className="bg-background">
       <Profile />
       <Presentation />
     </main>

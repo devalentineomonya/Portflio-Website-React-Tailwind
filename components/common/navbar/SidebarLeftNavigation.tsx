@@ -14,6 +14,8 @@ import { navbarItems } from "./navbarItems";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { GoArrowUpRight } from "react-icons/go";
+
 const SidebarLeftNavigation = () => {
   const pathName = usePathname();
   console.log(pathName);
@@ -37,19 +39,32 @@ const SidebarLeftNavigation = () => {
                     )}
                     asChild
                   >
-                    <Link href={item.link}>
+                    <Link
+                      target={item.count === null ? "_blank" : undefined}
+                      href={item.link}
+                    >
                       <item.icon />
                       <span>{item.name}</span>
                     </Link>
                   </SidebarMenuButton>
-                  <SidebarMenuBadge
-                    className={cn(
-                      "text-center border border-border text-gray-600 dark:text-gray-300 hover:text-white",
-                      { "border-transparent": pathName === item.link }
-                    )}
-                  >
-                    23
-                  </SidebarMenuBadge>
+                  {item.count !== null ? (
+                    <SidebarMenuBadge
+                      className={cn(
+                        "text-center border border-border text-gray-600 dark:text-gray-300 hover:text-white",
+                        { "border-transparent": pathName === item.link }
+                      )}
+                    >
+                      {item.count}
+                    </SidebarMenuBadge>
+                  ) : (
+                    <SidebarMenuBadge
+                      className={cn(
+                        "text-center border border-border text-gray-600 dark:text-gray-300 hover:text-white"
+                      )}
+                    >
+                      <GoArrowUpRight />
+                    </SidebarMenuBadge>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>

@@ -5,7 +5,7 @@ import SidebarLeftNavigation from "./SidebarLeftNavigation";
 import SidebarLeftFooter from "./SidebarLeftFooter";
 const SidebarLeft = () => {
   return (
-    <Sidebar className="bg-background">
+    <Sidebar className="bg-background xl:w-[12rem]">
       <SideBarLeftHeader />
       <SidebarLeftNavigation />
       <SidebarLeftFooter />

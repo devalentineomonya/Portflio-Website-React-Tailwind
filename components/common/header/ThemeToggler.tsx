@@ -10,7 +10,7 @@ const ThemeToggler = () => {
     <Button
       variant="outline"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2aspect-square rounded-full border border-gray-400 box-border relative overflow-hidden transition-all duration-300 ease-in-out"
+      className="h-8 p-2 aspect-square rounded-md border border-gray-400 box-border relative overflow-hidden transition-all duration-300 ease-in-out"
     >
       <IoSunnySharp
         className="absolute transform transition-all duration-500 ease-in-out dark:translate-y-0 dark:rotate-0 translate-y-10 rotate-180"

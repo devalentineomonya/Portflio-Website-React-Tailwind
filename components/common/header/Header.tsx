@@ -33,18 +33,18 @@ const Header = () => {
         <ThemeToggler />
         <Button
           variant="outline"
-          className="px-2 rounded-full border border-gray-400 box-border"
+          className="h-8 px-2 rounded-md border border-gray-400 box-border"
         >
           <FaRegCommentDots />
         </Button>
-        <Button className="rounded-xl">
-          <Link
-            href="mailto:valomosh254@gmail.com?subject=Job%20Opportunity&body=Hi%20Valentine%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20We%20have%20an%20exciting%20opportunity%20that%20matches%20your%20skills.%20Would%20you%20be%20interested%20in%20discussing%20this%20further%3F%0A%0ABest%20regards"
-            className="flex items-center gap-x-2"
-          >
+        <Button
+          size="sm"
+          className="rounded-md px-1 flex items-center gap-x-4 py-1 px-2"
+        >
+          <Link href="mailto:valomosh254@gmail.com?subject=Job%20Opportunity&body=Hi%20Valentine%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20We%20have%20an%20exciting%20opportunity%20that%20matches%20your%20skills.%20Would%20you%20be%20interested%20in%20discussing%20this%20further%3F%0A%0ABest%20regards">
             Mail
-            <LiaExternalLinkAltSolid  size={16}/>
           </Link>
+          <LiaExternalLinkAltSolid size={16} />
         </Button>
       </div>
     </header>
